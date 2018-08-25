@@ -5,8 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>cmdchat</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" href="main_logo.png">
 </head>
 <body>
+  <div class="container">
+    <div class="chat">
+
+    </div>
+    <div class="send_message">
+      <textarea type="text" spellcheck="false" oninput="minlengthinputcheck(this,'<' + chatname + '> ');"></textarea>
+    </div>
+    <div class="username">
+      <textarea type="text" spellcheck="false" oninput="minlengthinputcheck(this,'<username> ');">&lt;username&gt; </textarea>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyChkwG7fLVk5tkGrikbaNEvqZvr1_YeEAg",
+      authDomain: "cmdchat-6759a.firebaseapp.com",
+      databaseURL: "https://cmdchat-6759a.firebaseio.com",
+      projectId: "cmdchat-6759a",
+      storageBucket: "cmdchat-6759a.appspot.com",
+      messagingSenderId: "650097106377"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="vendors.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
