@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Consolas", "Monaco", "Andale Mono", "Inconsolata", "Roboto Mono", "Ubuntu Mono", monospace;
+  color: #0f0;
+  font-size: 1.125rem;
+}
+body {
+  background-color: #000;
+  text-align: center;
+  overflow: hidden;
+}
+input,textarea {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  resize: none;
+  width: 100%;
+}
+::selection {
+  background-color: #0f0;
+  color: #000;
+}
+.container {
+  width: 600px;
+  display: inline-block;
+  border: 1px solid #0f0;
+  border-top: none;
+  border-bottom: none;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.container:not(.get_username) .username,.container.get_username .send_message {
+  display: none;
+}
+.container .chat, .container .username, .container .send_message {
+  width: 100%;
+  display: block;
+  clear: both;
+  box-sizing: border-box;
+}
+.container .username textarea, .container .send_message textarea {
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+  height: 7rem;
+  line-height: 1.5;
+}
+.container .chat {
+  height: calc(100vh - 7rem);
+  border-bottom: 1px solid #0f0;
+  padding: 1rem 1.5rem;
+  overflow-y: auto;
+}
+.container .chat p {
+  display: block;
+  line-height: 1.5;
+  word-wrap: break-word;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0,255,0,0.75);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,255,0,1);
+}
