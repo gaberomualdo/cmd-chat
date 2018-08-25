@@ -42,7 +42,7 @@ document.querySelector("div.container div.username textarea").onkeydown = functi
   if(e.keyCode == 13){
     localStorage.setItem("cmdchat_username",this.value.substring(11));
     username = localStorage.getItem("cmdchat_username");
-    document.querySelector("div.container").classList.remove("get_username");
+    location.reload();
   }
 }
 document.querySelector("div.container div.send_message textarea").onkeydown = function(e){
