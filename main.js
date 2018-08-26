@@ -9,7 +9,7 @@ function check_chat_hash(hashchangefunc){
     chatname = window.location.hash.substring(1);
     init_chat();
   }else{
-    window.location.href = "#chat";
+    window.location.href = "about.html";
   }
 }
 function init_chat(){

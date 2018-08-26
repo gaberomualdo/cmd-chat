@@ -1,6 +1,13 @@
-# cmdchat
-A simple live chat application with a terminal-like theme. Previously called livechat.
-On cmdchat, you can chat on different chat hashes. For example, the default chat hash is "chat," which is found at https://xtrp.github.io/cmdchat/#chat.
-Each chat hash is it's own separate chat, which can be accessed by changing what follows the hashtag at the end of the URL.
-For example, if you want to chat with your friends, you can come up with a code that is your chat hash, eg. 57423, which would be at https://xtrp.github.io/cmdchat/#57423.
-Then, if you and your friends know the correct chat hash, only you and your friends can talk on that chat.
+# cmdchat: a simple chat service
+## a simple live chat application with a terminal-like theme.
+
+chat on different chatrooms by changing the hash in the URL.
+for example https://xtrp.github.io/cmdchat/#chat would link to the #chat chatroom, because the end of the URL is #chat.
+you can chat on whatever chatroom you want, just by changing the hash on the URL.
+you can think of the chatroom hash as a pin for a new chat.
+
+you can also do special commands on the chat.
+for example, you can type ```/clear``` to clear the entire chat and essentially restart the chat.
+
+so, why not start using cmdchat?
+just type https://xtrp.github.io/cmdchat/# then your chatroom hash, and start chatting!
