@@ -10,15 +10,42 @@
   <link rel="icon" href="main_logo.png">
 </head>
 <body>
+  <style type="text/css">
+  
+  .homeBtn,.resetUsername {
+    height: 2.5rem;
+    width: 2.5rem;
+    position: absolute;
+    top: 0.5rem;
+  }
+  .homeBtn {
+    left: 0.5rem;
+    background-image: url(arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.75rem;
+    transform: scale(-1, 1);
+  }
+  .resetUsername {
+    right: 1.25rem;
+    width: auto;
+    line-height: 2.5rem;
+    text-decoration: none;
+  }
+
+
+  </style>
+  <a href="about.html" class="homeBtn"></a>
+  <a class="resetUsername" href="javascript:localStorage.setItem('cmdchat_username','');location.reload()">Reset Username</a>
   <div class="container">
     <div class="chat">
 
     </div>
     <div class="send_message">
-      <textarea type="text" spellcheck="false" oninput="minlengthinputcheck(this,'<' + chatname + '> ');"></textarea>
+      <textarea type="text" spellcheck="false" placeholder="Send Message..."></textarea>
     </div>
     <div class="username">
-      <textarea type="text" spellcheck="false" oninput="minlengthinputcheck(this,'<username> ');">&lt;username&gt; </textarea>
+      <textarea type="text" spellcheck="false" placeholder="Choose Username..."></textarea>
     </div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>

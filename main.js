@@ -19,7 +19,7 @@ function init_chat(){
     document.querySelector("div.container div.username textarea").focus();
     _vendors_setCaretToPos(document.querySelector("div.container div.username textarea"),document.querySelector("div.container div.username textarea").value.length);
   }else{
-    document.querySelector("div.container div.send_message textarea").innerHTML = "&lt;" + chatname + "&gt; ";
+    document.querySelector("div.container div.send_message textarea").innerHTML = "";
     document.querySelector("div.container div.send_message textarea").focus();
     _vendors_setCaretToPos(document.querySelector("div.container div.send_message textarea"),document.querySelector("div.container div.send_message textarea").value.length);
   }
@@ -40,7 +40,7 @@ function init_chat(){
 }
 document.querySelector("div.container div.username textarea").onkeydown = function(e){
   if(e.keyCode == 13){
-    localStorage.setItem("cmdchat_username",this.value.substring(11));
+    localStorage.setItem("cmdchat_username",this.value);
     username = localStorage.getItem("cmdchat_username");
     this.value = "";
     location.reload();
@@ -49,7 +49,7 @@ document.querySelector("div.container div.username textarea").onkeydown = functi
 document.querySelector("div.container div.send_message textarea").onkeydown = function(e){
   if(e.keyCode == 13){
     e.preventDefault();
-    var message = this.value.substring(("<" + chatname + "> ").length);
+    var message = this.value;
     if(message.length > 0 && message != "/clear"){
       var newchat = chat.slice(0);
       newchat.push("&lt;" + username + "&gt; " + message);
@@ -59,13 +59,8 @@ document.querySelector("div.container div.send_message textarea").onkeydown = fu
       document.querySelector(".container .chat").innerHTML = "";
       firebase.database().ref(chatname).set(JSON.stringify(newchat));
     }
-    this.value = "<" + chatname + "> ";
+    this.value = "";
     this.focus();
     _vendors_setCaretToPos(this,this.value.length);
-  }
-}
-function minlengthinputcheck(input,minval){
-  if(input.value.length < minval.length){
-    input.value = minval;
   }
 }
